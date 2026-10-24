@@ -1,0 +1,27 @@
+[project]
+name = "stellaris-species-creator"
+version = "0.1.0"
+description = "Extract Stellaris species data (traits, species classes, portraits, homeworlds, name lists) to JSON"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+stellaris-extract = "data_extractor.extract_all:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["uv_build>=0.10,<0.11"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "data_extractor"
+module-root = ""
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["F", "I", "UP", "B", "SIM", "RUF"]
